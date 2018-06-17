@@ -38,7 +38,7 @@ sample_stack.peek()
 
 sample_stack.pop()
 print("sample stack =", sample_stack.stack)
-print(sample_stack.check_len())
+print("Length of stack is:", sample_stack.check_len())
 
 sample_stack.pop()
 sample_stack.pop()
