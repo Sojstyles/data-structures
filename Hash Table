@@ -1,1 +1,3 @@
 
+def hash():
+  """Hash function that takes in a number and hashes it to another value"""
