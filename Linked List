@@ -1,1 +1,9 @@
 
+
+class Node():
+    """Creates a Node containing both the data to be stored and a pointer to the next node"""
+
+    def __init__(self, data, proceeding):
+        self.data = None
+        self.proceeding = None
+
