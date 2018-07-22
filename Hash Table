@@ -1,5 +1,16 @@
 
-def hash():
-  """Hash function that takes in a number and hashes it to another value"""
+
+def hash_num(num):
+    """Takes a number as input and hashes it to return its position in the hash table"""
+
+
+
+def hash_string(string):
+    """Takes a string as input and hashes it to return its position in the hash table"""
+
+    sum = 0
+
+    for char in string:
+        sum += ord(char)
 
 
