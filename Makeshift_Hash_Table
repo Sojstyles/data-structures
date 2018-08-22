@@ -1,121 +1,163 @@
 
-
-# This is my attempt at a hash table with separate chaining WITHOUT
-# using the built in dictionary structure. Since we technically use lists,
-# the time complexities for operations (ex. for deletion of items) don't
-# exactly correspond with those of a genuine hash table.
-
-import hashlib, math, linked_list
-
-#--------------------------------------------------------# 
-
-class numHashTable():
-    """ Creates a hash table as a collection of linked lists 
-        to store numbers
+class Node():
+    """ Creates a Node containing both the data to be stored and a pointer to 
+        the next node
     """
+
+    def __init__(self, val):
+        # val is the information we're storing in the node
+        self.val = val
+        self.proceeding = None
+        
+    def get_val(self):
+        return self.val
+    
+    def set_proceeding(self, node):
+        # Sets the pointer to a specified node
+        self.proceeding = node
+        
+    def get_proceeding(self):
+        # Returns the pointer without changing the value
+        return self.proceeding
+
+#--------------------------------------------------------#    
+    
+class linkedList():
+    """ Creates a linked list as a series of nodes"""
     
     def __init__(self):
-        self.row0 = linked_list.linkedList()
-        self.row1 = linked_list.linkedList()
-        self.row2 = linked_list.linkedList()
-        self.row3 = linked_list.linkedList()
-        self.row4 = linked_list.linkedList()
-        self.table = [self.row0, self.row1, self.row2]
-        self.table += [self.row3, self.row4]
+        self.head = None
+            
+    def get_length(self):
+        """ Returns the length of the list"""  
+        count = 0
+        current = self.head
+        while current != None:
+            count += 1
+            current = current.get_proceeding()
+        return count
+       
+    def find_val(self, val):
+        """ Returns the first node with the specified value or returns an 
+            error if no such value exists in the list
+        """  
+        current = self.head
+        while current != None:
+            if val == current.get_val():
+                return current
+            current = current.get_proceeding()
+        return "Error! No such value exists!"
+            
+    def insert(self, val):
+        """ Creates a new node with the inputted val and inserts it into 
+            the list at the head
+        """
+        new_node = Node(val)
+        new_node.set_proceeding(self.head)
+        self.head = new_node
+               
+    def delete(self, val):
+        """ Deletes the first node containing val or raises an error if 
+            val isn't contained in the list
+        """       
+        if self.get_length() == 0:
+            return "Error! No such value exists!"  
+                #-------------------#
+        if self.get_length() == 1:
+            if self.head.val == val:
+                self.head = None
+            return "Error! No such value exists!"  
+                #-------------------#  
+        if self.get_length() == 2:   
+            if self.head.val == val: 
+                self.head.val = self.head.get_proceeding().val
+                self.head.set_proceeding(None)
+                #-------------------#
+            elif self.head.get_proceeding().val == val:
+                self.head.set_proceeding(None)
+            return "Error! No such value exists!"            
+                #-------------------#
+        current = self.head.get_proceeding()
+        previous = self.head
+        while current != None:
+            if val == current.get_val():
+                previous.set_proceeding(current.get_proceeding())
+                return current
+            previous = current
+            current = current.get_proceeding()
+        return "Error! No such value exists!"
+    
+            #-----------------------------# 
+    
+    # For the sake of convenience and the ability to neatly display
+    # my makeshift hash table, I've written in this method. We print the 
+    # array holding all the elements as opposed to the individual elements
+    def get_list(self):
+        """ Prints an array containing all values in the list"""
+        values = []
+        current = self.head
+        while current != None:
+            values.append(current.val)
+            current = current.get_proceeding()
+        return values
         
-    def insert(self, num):
-        """ Takes a number, hashes it, then inserts it into the table"""
-        hashed = hash(num * math.e) % 5
-        if hashed == 0:
-            self.row0.insert(num)
-        elif hashed == 1:
-            self.row1.insert(num)
-        elif hashed == 2:
-            self.row2.insert(num)
-        elif hashed == 3:
-            self.row3.insert(num)
-        else:
-            self.row4.insert(num)
 
-    def search(self, key):
-        """ Returns the number that is mapped to by the inputted key or 
-            an error if the number is not in the table
-        """
-        return
-    
-    def delete(self, key):
-        """ Deletes the number that is mapped to by the inputted key
-            or returns an error if the number is not in the table
-        """
-        return
-        
-    def display_table(self):
-        """ Prints all the contents of the hash table"""
-        for list in self.table:
-            print(list.get_list())
-        
-#--------------------------------------------------------# 
+#--------------------------------------------------------#       
 
-class strHashTable():
-    """ Creates a hash table to store strings"""
-    
-    def __init__(self):
-        self.row0 = linked_list.linkedList()
-        self.row1 = linked_list.linkedList()
-        self.row2 = linked_list.linkedList()
-        self.row3 = linked_list.linkedList()
-        self.row4 = linked_list.linkedList()
-        self.table = [self.row0, self.row1, self.row2]
-        self.table += [self.row3, self.row4]
-        
-    def insert(self, string):
-        """ Takes a string, hashes it, then inserts it into the table"""
-        hashed = hash(string) % 5
-        if hashed == 0:
-            self.row0.insert(string)
-        elif hashed == 1:
-            self.row1.insert(string)
-        elif hashed == 2:
-            self.row2.insert(string)
-        elif hashed == 3:
-            self.row3.insert(string)
-        else:
-            self.row4.insert(string)
-        
-    def search(self, key):
-        """ Returns the string that is mapped to by the inputted key or 
-            an error if the number is not in the table
-        """
-        return 
- 
-    
-    def delete(self, key):
-        """ Deletes the string that is mapped to by the inputted key
-            or returns an error if the number is not in the table
-        """
-        return 
-   
-    def display_table(self):
-        """ Prints all the contents of the hash table"""
-        for list in self.table:
-            print(list.get_list())
-    
-#--------------------------------------------------------# 
-  
-sample_numHash = numHashTable()
-sample_numHash.insert(math.pi)
-sample_numHash.insert(math.e)
-sample_numHash.insert(2018)
-for num in range(1, 100, 7):
-    sample_numHash.insert(num)
-sample_numHash.display_table()
+# Creates an example linked list
+ex_list = linkedList()
+
+ex_list.insert(1)
+ex_list.insert(2)
+ex_list.insert(3)
+ex_list.insert(4)
+
+print(ex_list.get_list())
+print(ex_list.head)
 print()
 
-sample_strHash = strHashTable()
-sample_strHash.insert("Hello World!")
-sample_strHash.insert("Python")
-sample_strHash.insert("Dictionary")
-sample_strHash.insert("Hash Table")
-sample_strHash.display_table()
+print(ex_list.head.get_val())
+print(ex_list.head.get_proceeding().get_val())
+print(ex_list.get_length())
 print()
+
+print(ex_list.find_val(1))
+print(ex_list.find_val(2))
+print(ex_list.find_val(3))
+print(ex_list.find_val(4))
+print(ex_list.find_val(5))
+print()
+
+ex_list.delete(3)
+
+print(ex_list.find_val(1))
+print(ex_list.find_val(2))
+print(ex_list.find_val(3))
+print(ex_list.find_val(4))
+print()
+
+ex_list.delete(1)   
+
+print(ex_list.find_val(1))
+print(ex_list.find_val(2))
+print(ex_list.find_val(3))
+print(ex_list.find_val(4))
+print()
+
+print(ex_list.head.get_val())
+print(ex_list.head.get_proceeding().get_val())
+print(ex_list.get_length())
+print(ex_list.get_list())
+print()
+
+ex_list.delete(4)   
+
+print(ex_list.get_list())
+print()
+
+ex_list.delete(2)   
+
+print(ex_list.get_list())
+print()
+
 
