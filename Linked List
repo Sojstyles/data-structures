@@ -1,5 +1,4 @@
 
-
 class Node():
     """ Creates a Node containing both the data to be stored and a pointer to 
         the next node
@@ -83,8 +82,18 @@ class linkedList():
             previous = current
             current = current.get_proceeding()
         return "Error! No such value exists!"
+    
+    def get_list(self):
+        """ Prints an array containing all values in the list"""
+        values = []
+        current = self.head
+        while current != None:
+            values.append(current.val)
+            current = current.get_proceeding()
+        return values
+        
 
-#--------------------------------------------------------#     
+#--------------------------------------------------------#       
 
 # Creates an example linked list
 ex_list = linkedList()
@@ -94,6 +103,7 @@ ex_list.insert(2)
 ex_list.insert(3)
 ex_list.insert(4)
 
+print(ex_list.get_list())
 print(ex_list.head)
 print()
 
@@ -128,6 +138,5 @@ print()
 print(ex_list.head.get_val())
 print(ex_list.head.get_proceeding().get_val())
 print(ex_list.get_length())
+print(ex_list.get_list())
 print()
-
-
