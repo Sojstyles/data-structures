@@ -9,7 +9,7 @@ import hashlib, math, linked_list
 
 #--------------------------------------------------------# 
 
-class HashTable():
+class numHashTable():
     """ Creates a hash table as a collection of linked lists 
         to store numbers
     """
@@ -55,8 +55,54 @@ class HashTable():
             print(list.get_list())
         
 #--------------------------------------------------------# 
+
+class strHashTable():
+    """ Creates a hash table to store strings"""
+    
+    def __init__(self):
+        self.row0 = linked_list.linkedList()
+        self.row1 = linked_list.linkedList()
+        self.row2 = linked_list.linkedList()
+        self.row3 = linked_list.linkedList()
+        self.row4 = linked_list.linkedList()
+        self.table = [self.row0, self.row1, self.row2]
+        self.table += [self.row3, self.row4]
+        
+    def insert(self, string):
+        """ Takes a string, hashes it, then inserts it into the table"""
+        hashed = hash(string) % 5
+        if hashed == 0:
+            self.row0.insert(string)
+        elif hashed == 1:
+            self.row1.insert(string)
+        elif hashed == 2:
+            self.row2.insert(string)
+        elif hashed == 3:
+            self.row3.insert(string)
+        else:
+            self.row4.insert(string)
+        
+    def search(self, key):
+        """ Returns the string that is mapped to by the inputted key or 
+            an error if the number is not in the table
+        """
+        return 
+ 
+    
+    def delete(self, key):
+        """ Deletes the string that is mapped to by the inputted key
+            or returns an error if the number is not in the table
+        """
+        return 
+   
+    def display_table(self):
+        """ Prints all the contents of the hash table"""
+        for list in self.table:
+            print(list.get_list())
+    
+#--------------------------------------------------------# 
   
-sample_numHash = HashTable()
+sample_numHash = numHashTable()
 sample_numHash.insert(math.pi)
 sample_numHash.insert(math.e)
 sample_numHash.insert(2018)
