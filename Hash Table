@@ -1,9 +1,13 @@
 
-
+# NOTE:
 # This is my attempt at a hash table with separate chaining WITHOUT
 # using the built in dictionary structure. Since we technically use lists,
 # the time complexities for operations (ex. for deletion of items) don't
 # exactly correspond with those of a genuine hash table.
+#
+# Also, it uses the linked list class I wrote. You can find it directly below
+# this file.
+
 
 import hashlib, math, linked_list
 
