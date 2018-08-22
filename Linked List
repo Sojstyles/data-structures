@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Aug 20 14:12:49 2018
+
+@author: Edison
+"""
 
 class Node():
     """ Creates a Node containing both the data to be stored and a pointer to 
@@ -60,21 +66,25 @@ class linkedList():
         """ Deletes the first node containing val or raises an error if 
             val isn't contained in the list
         """       
-        if self.get_length == 1:
-            if self.head == val:
-                return self.head
-            return "Error! No such value exists!"   
-        
-        if self.get_length == 2:
-            if self.head == val:
-                return self.head
-            elif self.head.proceeding == val:
-                return self.head.proceeding
-            return "Error! No such value exists!"
-        
+        if self.get_length() == 0:
+            return "Error! No such value exists!"  
+                #-------------------#
+        if self.get_length() == 1:
+            if self.head.val == val:
+                self.head = None
+            return "Error! No such value exists!"  
+                #-------------------#  
+        if self.get_length() == 2:   
+            if self.head.val == val: 
+                self.head.val = self.head.get_proceeding().val
+                self.head.set_proceeding(None)
+                #-------------------#
+            elif self.head.get_proceeding().val == val:
+                self.head.set_proceeding(None)
+            return "Error! No such value exists!"            
+                #-------------------#
         current = self.head.get_proceeding()
         previous = self.head
-        
         while current != None:
             if val == current.get_val():
                 previous.set_proceeding(current.get_proceeding())
@@ -83,6 +93,11 @@ class linkedList():
             current = current.get_proceeding()
         return "Error! No such value exists!"
     
+            #-----------------------------# 
+    
+    # For the sake of convenience and the ability to neatly display
+    # my makeshift hash table, I've written in this method. We print the 
+    # array holding all the elements as opposed to the individual elements
     def get_list(self):
         """ Prints an array containing all values in the list"""
         values = []
@@ -140,4 +155,15 @@ print(ex_list.head.get_proceeding().get_val())
 print(ex_list.get_length())
 print(ex_list.get_list())
 print()
+
+ex_list.delete(4)   
+
+print(ex_list.get_list())
+print()
+
+ex_list.delete(2)   
+
+print(ex_list.get_list())
+print()
+
 
