@@ -6,17 +6,15 @@
 # the time complexities for operations (ex. for deletion of items) don't
 # exactly correspond with those of a genuine hash table.
 #
-# Also, I use the linked list data structure I wrote. You can find it 
-# directly below this file.
+# Also, I use the linked list data structure that I wrote. You can 
+# find it directly below this file.
 
 #--------------------------------------------------------# 
 
 import hashlib, math, linked_list
 
 class numHashTable():
-    """ Creates a hash table as a collection of linked lists 
-        to store numbers
-    """
+    """ Creates a hash table as a collection of linked lists to store numbers"""
     
     def __init__(self):
         self.row0 = linked_list.linkedList()
@@ -42,9 +40,7 @@ class numHashTable():
             self.row4.insert(num)
 
     def search(self, num):
-        """ Returns True if the number is in the hash table and 
-            False otherwise
-        """
+        """ Returns True if the number is in the hash table and False otherwise"""
         index = hash(num * math.e) % 5
         current = self.table[index].head
         while current != None:
@@ -54,9 +50,7 @@ class numHashTable():
         return False
     
     def delete(self, num):
-        """ Deletes the number from the hash table or returns an 
-            error if it's not contained
-        """
+        """ Deletes the number from the hash table or returns an error if it's not contained"""
         if self.search(num) == False:
             return "Error! String not in hash table"""
         
@@ -97,9 +91,7 @@ class strHashTable():
             self.row4.insert(string)
         
     def search(self, string):
-        """ Returns True if the string is in the hash table and 
-            False otherwise
-        """
+        """ Returns True if the string is in the hash table and False otherwise"""
         index = hash(string) % 5
         current = self.table[index].head
         while current != None:
@@ -109,9 +101,7 @@ class strHashTable():
         return False
     
     def delete(self, string):
-        """ Deletes the string from the hash table or returns an 
-            error if it's not contained
-        """
+        """ Deletes the string from the hash table or returns an error if it's not contained"""
         if self.search(string) == False:
             return "Error! String not in hash table"""
         
