@@ -46,81 +46,6 @@ def selectionSort(array):
         array[x], array[var] = array[var], array[x]
     return array
 
-# ----------------------------------------------------------------------------------#
-
-    # Mergesort as taken from Interactive Python:
-    # http://interactivepython.org/courselib/static/pythonds/SortSearch/TheMergeSort.html
-
-
-def mergeSort(array):
-    """Takes an array of integers and returns it sorted by merge sort"""
-    # Recursively divides the array into subarrays, sorts each
-    # subarray, then combines them into a single sorted array
-    
-    if len(array)>1:
-        mid = len(array) // 2
-        leftHalf = array[:mid]
-        rightHalf = array[mid:]
-
-        mergeSort(leftHalf)
-        mergeSort(rightHalf)
-
-        i, j, k = 0, 0, 0
-        
-        while i < len(leftHalf) and j < len(rightHalf):
-            if leftHalf[i] < rightHalf[j]:
-                array[k]=leftHalf[i]
-                i = i + 1
-            else:
-                array[k] = rightHalf[j]
-                j = j + 1
-            k = k + 1
-
-        while i < len(leftHalf):
-            array[k] = leftHalf[i]
-            i = i + 1
-            k = k + 1
-
-        while j < len(rightHalf):
-            array[k]=rightHalf[j]
-            j = j + 1
-            k = k + 1
-
-        return array
-
- 
-#----------------------------------------------------------------------------------#
-
-    # Quicksort as taken from GeeksforGeeks:
-    # https://www.geeksforgeeks.org/quick-sort/
-    
-
-def quickSort(array, low, high):
-    """Takes an array of integers and returns it sorted by quicksort"""
-    # Choose a pivot element and partition the array into subarrays around it with
-    # smaller elements preceding the pivot and larger elements following it. Repeat
-    # the process recursively until entire array is sorted.
-
-    if low < high:
-        pi = partition(array, low, high)
-        quickSort(array, low, pi - 1)
-        quickSort(array, pi + 1, high)
-    return array
-
-# Helper function to partition arrays
-        
-def partition(array, low, high):
-    i = (low - 1)   
-    pivot = array[high]     
- 
-    for j in range(low, high):
-        if   array[j] <= pivot:
-            i += 1
-            array[i],array[j] = array[j],array[i]
-    array[i+1], array[high] = array[high], array[i+1]
-
-    return (i + 1)
- 
 #----------------------------------------------------------------------------------#
 
  # Test Cases
@@ -145,20 +70,5 @@ print(selectionSort([-4, 9, 2]))
 print(selectionSort([]))
 print(selectionSort([4, 1, 5, 1, 1, 9]))
 print()
-
-print(mergeSort([3, 5, 1, 8, 4]))
-print(mergeSort([1, 0]))
-print(mergeSort([-4, 9, 2]))
-print(mergeSort([]))
-print(mergeSort([4, 1, 5, 1, 1, 9]))
-print()
-
-print(quickSort([3, 5, 1, 8, 4], 0, 4))
-print(quickSort([1, 0], 0, 1))
-print(quickSort([-4, 9, 2], 0, 2))
-print(quickSort([], 0, 0))
-print(quickSort([4, 1, 5, 1, 1, 9], 0, 5))
-print()
- 
 
 
