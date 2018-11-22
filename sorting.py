@@ -19,8 +19,8 @@ def bubbleSort(array):
 
 def insertionSort(array):
     """Takes an array of integers and returns it sorted by insertion sort"""
-    #Repeatedly take the minimum of the unsorted array and insert
-    #it at the end of the sorted array.
+    # Repeatedly take the minimum of the unsorted array and insert
+    # it at the end of the sorted array.
     
     sorted = []
     while array != []:
