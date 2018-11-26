@@ -16,10 +16,10 @@ def bubbleSort(array):
 
 #----------------------------------------------------------------------------------#
 
-def insertionSort(array):
-    """Takes an array of integers and returns it sorted by insertion sort"""
-    # Repeatedly take the minimum of the unsorted array and insert
-    # it at the end of the sorted array.
+def selectionSort(array):
+    """Takes an array of integers and returns it sorted by selection sort"""
+    # Repeatedly find the minimum of the unsorted elements and add it
+    # to the sorted elements.
     
     sorted = []
     while array != []:
@@ -29,11 +29,11 @@ def insertionSort(array):
     return sorted
                 
 #----------------------------------------------------------------------------------#
-
-def selectionSort(array):
-    """Takes an array of integers and returns it sorted by selection sort"""
-    # Repeatedly find the minimum of the unsorted elements and add it
-    # to the sorted elements.
+    
+def insertionSort(array):
+    """Takes an array of integers and returns it sorted by insertion sort"""
+    # Repeatedly take the minimum of the unsorted array and insert
+    # it at the end of the sorted array.
 
     for x in range(len(array)):
         length = len(array)
