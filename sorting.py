@@ -55,6 +55,13 @@ print(bubbleSort([]))
 print(bubbleSort([4, 1, 5, 1, 1, 9]))
 print()
 
+print(selectionSort([3, 5, 1, 8, 4]))
+print(selectionSort([1, 0]))
+print(selectionSort([-4, 9, 2]))
+print(selectionSort([]))
+print(selectionSort([4, 1, 5, 1, 1, 9]))
+print()
+
 print(insertionSort([3, 5, 1, 8, 4]))
 print(insertionSort([1, 0]))
 print(insertionSort([-4, 9, 2]))
@@ -62,11 +69,6 @@ print(insertionSort([]))
 print(insertionSort([4, 1, 5, 1, 1, 9]))
 print()
 
-print(selectionSort([3, 5, 1, 8, 4]))
-print(selectionSort([1, 0]))
-print(selectionSort([-4, 9, 2]))
-print(selectionSort([]))
-print(selectionSort([4, 1, 5, 1, 1, 9]))
-print()
+
 
 
