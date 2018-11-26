@@ -11,7 +11,6 @@ def bubbleSort(array):
     for x in range(length):
         for y in range(0, length - x - 1):
             if array[y] > array[y + 1]:
-                #Simultaneous declarations
                 array[y], array[y + 1] = array[y + 1], array[y]
     return array
 
@@ -26,7 +25,7 @@ def insertionSort(array):
     while array != []:
         sorted += [min(array)]
         array.remove(min(array))
-        #Extra O(n) removal operations?
+        # Extra O(n) removal operations?
     return sorted
                 
 #----------------------------------------------------------------------------------#
