@@ -108,7 +108,6 @@ class linkedList():
             values.append(current.val)
             current = current.get_proceeding()
         return values
-        
 
 #--------------------------------------------------------#       
 
