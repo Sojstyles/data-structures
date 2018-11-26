@@ -17,27 +17,27 @@ class numHashTable():
     """ Creates a hash table as a collection of linked lists to store numbers"""
     
     def __init__(self):
-        self.row0 = linked_list.linkedList()
-        self.row1 = linked_list.linkedList()
-        self.row2 = linked_list.linkedList()
-        self.row3 = linked_list.linkedList()
-        self.row4 = linked_list.linkedList()
-        self.table = [self.row0, self.row1, self.row2]
-        self.table += [self.row3, self.row4]
+        self.r0 = linked_list.linkedList()
+        self.r1 = linked_list.linkedList()
+        self.r2 = linked_list.linkedList()
+        self.r3 = linked_list.linkedList()
+        self.r4 = linked_list.linkedList()
+        self.table = [self.r0, self.r1, self.r2]
+        self.table += [self.r3, self.r4]
         
     def insert(self, num):
         """ Takes a number, hashes it, then inserts it into the table"""
         hashed = hash(num * math.e) % 5
         if hashed == 0:
-            self.row0.insert(num)
+            self.r0.insert(num)
         elif hashed == 1:
-            self.row1.insert(num)
+            self.r1.insert(num)
         elif hashed == 2:
-            self.row2.insert(num)
+            self.r2.insert(num)
         elif hashed == 3:
-            self.row3.insert(num)
+            self.r3.insert(num)
         else:
-            self.row4.insert(num)
+            self.r4.insert(num)
 
     def search(self, num):
         """ Returns True if the number is in the hash table and False otherwise"""
@@ -68,27 +68,27 @@ class strHashTable():
     """ Creates a hash table to store strings"""
     
     def __init__(self):
-        self.row0 = linked_list.linkedList()
-        self.row1 = linked_list.linkedList()
-        self.row2 = linked_list.linkedList()
-        self.row3 = linked_list.linkedList()
-        self.row4 = linked_list.linkedList()
-        self.table = [self.row0, self.row1, self.row2]
-        self.table += [self.row3, self.row4]
+        self.r0 = linked_list.linkedList()
+        self.r1 = linked_list.linkedList()
+        self.r2 = linked_list.linkedList()
+        self.r3 = linked_list.linkedList()
+        self.r4 = linked_list.linkedList()
+        self.table = [self.r0, self.r1, self.r2]
+        self.table += [self.r3, self.r4]
         
     def insert(self, string):
         """ Takes a string, hashes it, then inserts it into the table"""
         hashed = hash(string) % 5
         if hashed == 0:
-            self.row0.insert(string)
+            self.r0.insert(string)
         elif hashed == 1:
-            self.row1.insert(string)
+            self.r1.insert(string)
         elif hashed == 2:
-            self.row2.insert(string)
+            self.r2.insert(string)
         elif hashed == 3:
-            self.row3.insert(string)
+            self.r3.insert(string)
         else:
-            self.row4.insert(string)
+            self.r4.insert(string)
         
     def search(self, string):
         """ Returns True if the string is in the hash table and False otherwise"""
