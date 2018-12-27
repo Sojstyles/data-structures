@@ -26,7 +26,7 @@ class Node():
         # Returns the pointer without changing the value
         return self.proceeding
 
-#--------------------------------------------------------#    
+#-----------------------------------------------------------------------------------------------------------------#   
     
 class linkedList():
     """ Creates a linked list as a series of nodes"""
