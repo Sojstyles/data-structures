@@ -1,11 +1,5 @@
 
-
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 20 14:12:49 2018
-
-@author: Edison
-"""
+# LINKED LIST
 
 class Node():
     """ Creates a Node containing both the data to be stored and a pointer to 
