@@ -2,10 +2,10 @@
 # HASH TABLE
 
 # NOTE:
-# This is a hash table implementation with separate chaining WITHOUT
-# using the built in dictionary structure. Since we technically use lists,
-# the time complexities for operations (ex. for deletion of items) may not
-# exactly correspond with those of a genuine hash table.
+# This is a hash table implementation with separate chaining WITHOUT using
+# the built in dictionary structure. Since we technically use lists, the
+# time complexities for operations (e.g. deletions) may not exactly
+# correspond with those of a genuine hash table.
 #
 # Also, I use the linked list data structure that I wrote. You can 
 # find it directly below this file.
