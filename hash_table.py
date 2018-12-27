@@ -160,7 +160,7 @@ sample_numHash.display_table()
 print()
 print()
 
-#-----------------------------# 
+#-----------------------------------------------------# 
 
 sample_strHash = strHashTable()
 sample_strHash.insert("Hello World!")
