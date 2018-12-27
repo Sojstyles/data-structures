@@ -14,7 +14,7 @@ def bubbleSort(array):
                 array[y], array[y + 1] = array[y + 1], array[y]
     return array
 
-#----------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------------------#
 
 def selectionSort(array):
     """Takes an array of integers and returns it sorted by selection sort"""
@@ -28,7 +28,7 @@ def selectionSort(array):
         # Extra O(n) removal operations?
     return sorted
                 
-#----------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------------------#
     
 def insertionSort(array):
     """Takes an array of integers and returns it sorted by insertion sort"""
@@ -44,7 +44,7 @@ def insertionSort(array):
         array[x], array[var] = array[var], array[x]
     return array
 
-#----------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------------------#
 
  # Test Cases
 
