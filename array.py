@@ -1,7 +1,6 @@
     
 # ARRAY
 
-
 array = []
 # We use a list in Python instead
 
