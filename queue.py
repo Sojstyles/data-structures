@@ -33,7 +33,7 @@ class Queue:
             return self.queue[len(self.queue) - 1]
         print("No items in the queue")
 
-#-----------------------------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------------------#
 
 sample_queue = Queue()
 sample_queue.enqueue(5), sample_queue.enqueue(6), sample_queue.enqueue(1)
