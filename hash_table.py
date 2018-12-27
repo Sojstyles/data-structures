@@ -1,4 +1,5 @@
 
+# HASH TABLE
 
 # NOTE:
 # This is my attempt at a hash table with separate chaining WITHOUT
@@ -14,7 +15,9 @@
 import hashlib, math, linked_list
 
 class numHashTable():
-    """ Creates a hash table as a collection of linked lists to store numbers"""
+    """ Creates a hash table in the form of a collection of linked lists 
+        to store numbers
+    """
     
     def __init__(self):
         self.r0 = linked_list.linkedList()
@@ -113,7 +116,7 @@ class strHashTable():
         for list in self.table:
             print(list.get_list())
     
-#--------------------------------------------------------# 
+#-----------------------------------------------------------------------------------------------------------------# 
   
 sample_numHash = numHashTable()
 sample_numHash.insert(math.pi)
