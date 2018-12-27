@@ -10,7 +10,7 @@
 # Also, I use the linked list data structure that I wrote. You can 
 # find it directly below this file.
 
-#--------------------------------------------------------# 
+#-----------------------------------------------------------------------------------------------------------------#
 
 import hashlib, math, linked_list
 
@@ -73,7 +73,7 @@ class numHashTable():
         for list in self.table:
             print(list.get_list())
         
-#--------------------------------------------------------# 
+#-----------------------------------------------------------------------------------------------------------------#
 
 class strHashTable():
     """ Creates a hash table in the form of a collection of linked lists 
