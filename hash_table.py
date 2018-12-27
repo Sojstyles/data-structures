@@ -28,8 +28,10 @@ class numHashTable():
         self.table = [self.r0, self.r1, self.r2]
         self.table += [self.r3, self.r4]
         
+        
     def insert(self, num):
         """ Takes a number, hashes it, then inserts it into the table"""
+        
         hashed = hash(num * math.e) % 5
         if hashed == 0:
             self.r0.insert(num)
@@ -42,8 +44,10 @@ class numHashTable():
         else:
             self.r4.insert(num)
 
+            
     def search(self, num):
         """ Returns True if the number is in the hash table and False otherwise"""
+        
         index = hash(num * math.e) % 5
         current = self.table[index].head
         while current != None:
@@ -52,23 +56,29 @@ class numHashTable():
             current = current.get_proceeding()
         return False
     
+    
     def delete(self, num):
         """ Deletes the number from the hash table or returns an error if it's not contained"""
+        
         if self.search(num) == False:
             return "Error! String not in hash table"""
         
         index = hash(num * math.e) % 5
         self.table[index].delete(num)
         
+        
     def display_table(self):
         """ Prints all the contents of the hash table"""
+        
         for list in self.table:
             print(list.get_list())
         
 #--------------------------------------------------------# 
 
 class strHashTable():
-    """ Creates a hash table to store strings"""
+    """ Creates a hash table in the form of a collection of linked lists 
+        to store strings
+    """
     
     def __init__(self):
         self.r0 = linked_list.linkedList()
@@ -79,8 +89,10 @@ class strHashTable():
         self.table = [self.r0, self.r1, self.r2]
         self.table += [self.r3, self.r4]
         
+        
     def insert(self, string):
         """ Takes a string, hashes it, then inserts it into the table"""
+        
         hashed = hash(string) % 5
         if hashed == 0:
             self.r0.insert(string)
@@ -92,9 +104,11 @@ class strHashTable():
             self.r3.insert(string)
         else:
             self.r4.insert(string)
-        
+            
+            
     def search(self, string):
         """ Returns True if the string is in the hash table and False otherwise"""
+        
         index = hash(string) % 5
         current = self.table[index].head
         while current != None:
@@ -103,16 +117,20 @@ class strHashTable():
             current = current.get_proceeding()
         return False
     
+    
     def delete(self, string):
         """ Deletes the string from the hash table or returns an error if it's not contained"""
+        
         if self.search(string) == False:
             return "Error! String not in hash table"""
         
         index = hash(string) % 5
         self.table[index].delete(string)
        
+    
     def display_table(self):
         """ Prints all the contents of the hash table"""
+        
         for list in self.table:
             print(list.get_list())
     
