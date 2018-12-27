@@ -35,6 +35,7 @@ class Stack:
         print("No items on the stack")
 
 #------------------------------------------------------------------------------------------------------#
+
 sample_stack = Stack()
 sample_stack.push(5), sample_stack.push(6), sample_stack.push(1)
 print("sample stack =", sample_stack.stack)
