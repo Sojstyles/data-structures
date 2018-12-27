@@ -1,6 +1,6 @@
   
   
-  # Array Sorting Algorithms
+# Array Sorting Algorithms
 
 def bubbleSort(array):
     """Takes an array of integers and returns it sorted by bubble sort"""
