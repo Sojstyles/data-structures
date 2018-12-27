@@ -1,7 +1,6 @@
 
 # LINKED LIST
 
-
 class Node():
     """ Creates a Node containing both the data to be stored and a pointer to 
         the next node
