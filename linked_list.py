@@ -12,12 +12,15 @@ class Node():
         self.val = val
         self.proceeding = None
         
+        
     def get_val(self):
         return self.val
+    
     
     def set_proceeding(self, node):
         # Sets the pointer to a specified node
         self.proceeding = node
+        
         
     def get_proceeding(self):
         # Returns the pointer without changing the value
@@ -31,8 +34,10 @@ class linkedList():
     def __init__(self):
         self.head = None
             
+            
     def get_length(self):
         """ Returns the length of the list"""  
+        
         count = 0
         current = self.head
         while current != None:
@@ -40,10 +45,12 @@ class linkedList():
             current = current.get_proceeding()
         return count
        
+        
     def find_val(self, val):
         """ Returns the first node with the specified value or returns an 
             error if no such value exists in the list
         """  
+        
         current = self.head
         while current != None:
             if val == current.get_val():
@@ -51,18 +58,22 @@ class linkedList():
             current = current.get_proceeding()
         return "Error! No such value exists!"
             
+        
     def insert(self, val):
         """ Creates a new node with the inputted val and inserts it into 
             the list at the head
         """
+        
         new_node = Node(val)
         new_node.set_proceeding(self.head)
         self.head = new_node
-               
+          
+            
     def delete(self, val):
         """ Deletes the first node containing val or raises an error if 
             val isn't contained in the list
         """       
+        
         if self.get_length() == 0:
             return "Error! No such value exists!"  
                 #-------------------#
@@ -94,9 +105,11 @@ class linkedList():
     
     # For the sake of convenience and the ability to neatly display
     # my makeshift hash table, I've written in this method. We print the 
-    # array holding all the elements as opposed to the individual elements
+    # array holding all the elements as opposed to the individual elements.
+    
     def get_list(self):
         """ Prints an array containing all values in the list"""
+        
         values = []
         current = self.head
         while current != None:
@@ -104,7 +117,7 @@ class linkedList():
             current = current.get_proceeding()
         return values
 
-#--------------------------------------------------------#       
+#-----------------------------------------------------------------------------------------------------------------#    
 
 # Creates an example linked list
 ex_list = linkedList()
