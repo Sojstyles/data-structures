@@ -97,10 +97,4 @@ Sub clear_sorts()
 End Sub
 
 
-Sub select_cell()
-    Range("C13:F13").Select
-    Range("F1") = Range("C13:F13").Formula
-End Sub
-
-
 
