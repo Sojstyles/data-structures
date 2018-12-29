@@ -1,2 +1,2 @@
-# Big O
+# Big-O Cheatsheet
 
