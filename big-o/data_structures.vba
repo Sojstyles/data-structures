@@ -1,4 +1,5 @@
  
+
  ' Macros taken from the data_structures page of the cheatsheet workbook
  ' used to display data structure time complexities, check your answers,
  ' and clear the table as requested
@@ -664,3 +665,7 @@ Sub clear_structures()
     Range("B10").Select
     
 End Sub
+
+ 
+ 
+ 
