@@ -48,8 +48,6 @@ def insertion_sort(array):
 
 #------------------------------------------------------------------------------------------------------#
 
- # Test Cases
-
 print(bubble_sort([3, 5, 1, 8, 4]))
 print(bubble_sort([1, 0]))
 print(bubble_sort([-4, 9, 2]))
