@@ -32,8 +32,10 @@ def selection_sort(array):
     
 def insertion_sort(array):
     """Takes an array of integers and returns it sorted by insertion sort"""
-    # Repeatedly take the minimum of the unsorted array and insert
-    # it at the end of the sorted array.
+    # Sort the array by building up an array of sorted elements from the 
+    # unsorted elements.
+    # At each step, take the next element from the unsorted and insert it
+    # into its correct place in the sorted elements.
 
     for x in range(len(array)):
         length = len(array)
