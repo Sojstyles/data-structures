@@ -2,7 +2,7 @@
   
 # Array Sorting Algorithms
 
-def bubbleSort(array):
+def bubble_sort(array):
     """Takes an array of integers and returns it sorted by bubble sort"""
     # Iterate through the array, swapping neighbors as appropriate.
     # Repeat until entire array is ordered (last iteration). 
@@ -16,7 +16,7 @@ def bubbleSort(array):
 
 #------------------------------------------------------------------------------------------------------#
 
-def selectionSort(array):
+def selection_sort(array):
     """Takes an array of integers and returns it sorted by selection sort"""
     # Repeatedly find the minimum of the unsorted elements and add it
     # to the sorted elements.
@@ -30,7 +30,7 @@ def selectionSort(array):
                 
 #------------------------------------------------------------------------------------------------------#
     
-def insertionSort(array):
+def insertion_sort(array):
     """Takes an array of integers and returns it sorted by insertion sort"""
     # Repeatedly take the minimum of the unsorted array and insert
     # it at the end of the sorted array.
@@ -48,25 +48,25 @@ def insertionSort(array):
 
  # Test Cases
 
-print(bubbleSort([3, 5, 1, 8, 4]))
-print(bubbleSort([1, 0]))
-print(bubbleSort([-4, 9, 2]))
-print(bubbleSort([]))
-print(bubbleSort([4, 1, 5, 1, 1, 9]))
+print(bubble_sort([3, 5, 1, 8, 4]))
+print(bubble_sort([1, 0]))
+print(bubble_sort([-4, 9, 2]))
+print(bubble_sort([]))
+print(bubble_sort([4, 1, 5, 1, 1, 9]))
 print()
 
-print(selectionSort([3, 5, 1, 8, 4]))
-print(selectionSort([1, 0]))
-print(selectionSort([-4, 9, 2]))
-print(selectionSort([]))
-print(selectionSort([4, 1, 5, 1, 1, 9]))
+print(selection_sort([3, 5, 1, 8, 4]))
+print(selection_sort([1, 0]))
+print(selection_sort([-4, 9, 2]))
+print(selection_sort([]))
+print(selection_sort([4, 1, 5, 1, 1, 9]))
 print()
 
-print(insertionSort([3, 5, 1, 8, 4]))
-print(insertionSort([1, 0]))
-print(insertionSort([-4, 9, 2]))
-print(insertionSort([]))
-print(insertionSort([4, 1, 5, 1, 1, 9]))
+print(insertion_sort([3, 5, 1, 8, 4]))
+print(insertion_sort([1, 0]))
+print(insertion_sort([-4, 9, 2]))
+print(insertion_sort([]))
+print(insertion_sort([4, 1, 5, 1, 1, 9]))
 print()
 
 
