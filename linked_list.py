@@ -118,7 +118,6 @@ class linkedList():
 
 #------------------------------------------------------------------------------------------------------# 
 
-# Creates an example linked list
 ex_list = linkedList()
 
 ex_list.insert(1)
