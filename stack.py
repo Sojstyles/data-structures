@@ -15,7 +15,7 @@ class Stack:
     def push(self, element):
         """Pushes an element onto the stack (at the end of the array)"""
          
-        self.stack += [element]
+        self.stack.append(element)
 
       
     def pop(self):
