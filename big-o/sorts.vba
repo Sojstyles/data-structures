@@ -23,6 +23,8 @@ Sub set_exponential()
     Exponential(7) = "E15"
 End Sub
 
+
+
 Sub display_sorts()
 
     set_log
@@ -78,7 +80,11 @@ Sub check_sorts()
         End If
     Next
 
+    Range("B10").Select
+
 End Sub
+
+
 
 Sub clear_sorts()
 
