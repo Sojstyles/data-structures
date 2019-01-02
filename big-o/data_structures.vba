@@ -69,6 +69,8 @@ Sub set_linear()
     Linear(25) = "K17"
 End Sub
 
+
+
 Sub display_structures()
 
     set_undefined
@@ -167,7 +169,11 @@ Sub check_structures()
         End If
     Next
 
+    Range("B10").Select
+
 End Sub
+
+
 
 Sub clear_structures()
 
