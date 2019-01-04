@@ -5,7 +5,7 @@
 def bubble_sort(array):
     """Takes an array of integers and returns it sorted by bubble sort"""
     # Iterate through the array, swapping neighbors as appropriate.
-    # Repeat until entire array is ordered (last iteration). 
+    # Repeat until entire array is ordered. 
     
     length = len(array)
     for x in range(length):
