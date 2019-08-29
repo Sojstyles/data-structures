@@ -3,6 +3,8 @@
 ' Macros taken from the data_structures page of the cheatsheet workbook
 ' used to display sorting time complexities, check your answers,
 ' and clear the table as requested
+' Note: checking answers doesn't update cells with white fill if previously 
+' marked as incorrect
 
 Dim Logarithm(1 To 3) As String
 Dim Exponential(1 To 7) As String
